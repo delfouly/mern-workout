@@ -16,6 +16,10 @@ type WorkoutsReducerProps = {
     | {
         type: "ADD_WORKOUT";
         payload: Workout;
+      }
+    | {
+        type: "DELETE_WORKOUT";
+        payload: Workout["_id"];
       };
 };
 
@@ -39,6 +43,10 @@ function workoutsReducer(
     case "ADD_WORKOUT":
       return {
         workouts: [action.payload, ...state.workouts!],
+      };
+    case "DELETE_WORKOUT":
+      return {
+        workouts: state.workouts!.filter((e) => e._id !== action.payload),
       };
 
     default:
