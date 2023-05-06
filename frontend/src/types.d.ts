@@ -5,3 +5,8 @@ type Workout = {
   load: number;
   createdAt?: string;
 };
+
+type User = {
+  _id: string;
+  email: string;
+};
