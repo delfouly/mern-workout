@@ -11,7 +11,7 @@ type WorkoutsReducerProps = {
   action:
     | {
         type: "SET_WORKOUTS";
-        payload: Workout[];
+        payload: Workout[] | null;
       }
     | {
         type: "ADD_WORKOUT";
